@@ -33,9 +33,9 @@ export function Contact() {
           <button
             type="button"
             onClick={copyEmail}
-            className="group flex flex-col items-start rounded-2xl border border-border bg-card p-6 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
+            className="group flex flex-col items-start rounded-lg border border-border bg-card p-6 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
           >
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-accent-soft text-accent">
               <Mail className="h-5 w-5" strokeWidth={2} />
             </div>
             <p className="text-sm font-semibold text-foreground">Email</p>
@@ -57,9 +57,9 @@ export function Contact() {
             href={site.social.linkedin}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex flex-col items-start rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
+            className="flex flex-col items-start rounded-lg border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
           >
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-accent-soft text-accent">
               <LinkedinIcon className="h-5 w-5" />
             </div>
             <p className="text-sm font-semibold text-foreground">LinkedIn</p>
@@ -70,9 +70,9 @@ export function Contact() {
             href={site.social.github}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex flex-col items-start rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
+            className="flex flex-col items-start rounded-lg border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
           >
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-accent-soft text-accent">
               <GithubIcon className="h-5 w-5" />
             </div>
             <p className="text-sm font-semibold text-foreground">GitHub</p>
@@ -83,9 +83,9 @@ export function Contact() {
             href={site.social.tryhackme}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex flex-col items-start rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
+            className="flex flex-col items-start rounded-lg border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
           >
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-accent-soft text-accent">
               <Radar className="h-5 w-5" strokeWidth={2} />
             </div>
             <p className="text-sm font-semibold text-foreground">TryHackMe</p>

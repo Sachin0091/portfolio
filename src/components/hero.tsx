@@ -7,16 +7,13 @@ import { site } from "@/lib/data";
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-20 pb-24 sm:pt-28 sm:pb-32">
-      <div className="grid-fade pointer-events-none absolute inset-0 -z-10" />
+      <div className="dot-grid pointer-events-none absolute inset-0 -z-10 h-[420px]" />
 
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="animate-fade-up">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-              </span>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               Available for SOC & security analyst roles
             </div>
 
@@ -33,10 +30,10 @@ export function Hero() {
               MITRE ATT&CK.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
+                className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
               >
                 Get in touch
                 <ArrowUpRight className="h-4 w-4" />
@@ -44,7 +41,7 @@ export function Hero() {
               <a
                 href="/Sachin_Gautam_Resume.pdf"
                 download
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+                className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
               >
                 Download resume
                 <ArrowDownToLine className="h-4 w-4" />
@@ -53,7 +50,7 @@ export function Hero() {
 
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
-                <MapPin className="h-4 w-4 text-accent" />
+                <MapPin className="h-4 w-4" />
                 {site.location}
               </span>
               <a
@@ -62,7 +59,7 @@ export function Hero() {
                 rel="noreferrer noopener"
                 className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
               >
-                <GithubIcon className="h-4 w-4 text-accent" />
+                <GithubIcon className="h-4 w-4" />
                 GitHub
               </a>
               <a
@@ -71,7 +68,7 @@ export function Hero() {
                 rel="noreferrer noopener"
                 className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
               >
-                <LinkedinIcon className="h-4 w-4 text-accent" />
+                <LinkedinIcon className="h-4 w-4" />
                 LinkedIn
               </a>
               <a
@@ -80,26 +77,25 @@ export function Hero() {
                 rel="noreferrer noopener"
                 className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
               >
-                <Radar className="h-4 w-4 text-accent" />
+                <Radar className="h-4 w-4" />
                 TryHackMe
               </a>
             </div>
           </div>
 
           <div className="animate-fade-up [animation-delay:150ms] flex justify-center lg:justify-end">
-            <div className="animate-float relative">
-              <div className="absolute inset-0 -z-10 rounded-full bg-accent/20 blur-3xl" />
-              <div className="relative h-56 w-56 overflow-hidden rounded-[2.5rem] border border-border bg-card shadow-xl shadow-black/5 sm:h-72 sm:w-72">
+            <div className="relative">
+              <div className="h-56 w-56 overflow-hidden rounded-lg border border-border sm:h-72 sm:w-72">
                 <Image
                   src="/profile.jpg"
                   alt={site.name}
                   fill
                   priority
                   sizes="(min-width: 640px) 288px, 224px"
-                  className="object-cover"
+                  className="object-cover grayscale transition-all duration-500 hover:grayscale-0"
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 rounded-2xl border border-border bg-card px-4 py-3 shadow-lg shadow-black/5">
+              <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
                 <p className="text-xs text-muted-foreground">Currently</p>
                 <p className="text-sm font-medium text-foreground">Associate SOC Analyst</p>
               </div>

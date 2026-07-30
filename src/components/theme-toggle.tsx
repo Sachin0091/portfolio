@@ -25,11 +25,11 @@ export function ThemeToggle() {
   const mounted = useMounted();
 
   if (!mounted) {
-    return <div className="h-9 w-28 rounded-full border border-border bg-card" />;
+    return <div className="h-9 w-28 rounded-md border border-border bg-card" />;
   }
 
   return (
-    <div className="flex items-center gap-0.5 rounded-full border border-border bg-card p-1">
+    <div className="flex items-center gap-0.5 rounded-md border border-border bg-card p-1">
       {options.map(({ value, label, icon: Icon }) => {
         const active = theme === value;
         return (
@@ -39,7 +39,7 @@ export function ThemeToggle() {
             aria-label={`Use ${label} theme`}
             aria-pressed={active}
             onClick={() => setTheme(value)}
-            className={`flex h-7 w-7 items-center justify-center rounded-full transition-colors ${
+            className={`flex h-7 w-7 items-center justify-center rounded-md transition-colors ${
               active
                 ? "bg-accent text-accent-foreground"
                 : "text-muted-foreground hover:text-foreground"

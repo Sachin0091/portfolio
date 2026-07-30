@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X, ShieldCheck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Container } from "@/components/container";
 import { navLinks, site } from "@/lib/data";
@@ -17,6 +17,11 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const initials = site.name
+    .split(" ")
+    .map((part) => part[0])
+    .join("");
+
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-colors ${
@@ -26,12 +31,11 @@ export function Navbar() {
       }`}
     >
       <Container className="flex h-16 items-center justify-between">
-        <a
-          href="#top"
-          className="flex items-center gap-2 font-mono text-sm font-semibold text-foreground"
-        >
-          <ShieldCheck className="h-5 w-5 text-accent" strokeWidth={2} />
-          {site.name}
+        <a href="#top" className="flex items-center gap-2.5">
+          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-foreground font-mono text-xs font-semibold text-background">
+            {initials}
+          </span>
+          <span className="text-sm font-medium text-foreground">{site.name}</span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -50,9 +54,9 @@ export function Navbar() {
           <ThemeToggle />
           <a
             href="#contact"
-            className="rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
+            className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
           >
-            Get in touch
+            Contact
           </a>
         </div>
 
@@ -62,7 +66,7 @@ export function Navbar() {
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground"
+            className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground"
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -77,7 +81,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-card hover:text-foreground"
+                className="rounded-md px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-card hover:text-foreground"
               >
                 {link.label}
               </a>
