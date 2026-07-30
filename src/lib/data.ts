@@ -83,12 +83,14 @@ export const projects: Project[] = [
     description:
       "A local-first OSINT aggregator that builds a digital footprint from a username, email, phone number, or photo - enumerating 75 platforms, checking breach/registration signals, resolving phone carrier data, and pulling image EXIF metadata into one correlation graph with local scan history.",
     tags: ["Python", "FastAPI", "OSINT", "Threat Intel"],
+    link: "https://github.com/Sachin0091/osint-digital-footprint-tracker",
   },
   {
     name: "Phishing Website Detector",
     description:
       "A CLI tool that fetches a webpage and scans its content and structure for phishing indicators: brand impersonation, credential-harvesting forms that submit off-domain, hidden iframes, obfuscated JavaScript, and IP-hosted sites.",
     tags: ["Python", "Web Scraping", "Phishing Analysis"],
+    link: "https://github.com/Sachin0091/phishing-website-detector",
   },
   {
     name: "Malicious IP Analyzer",
@@ -103,18 +105,6 @@ export const projects: Project[] = [
       "A collaborative Android security testing tool that uses ADB to identify mobile vulnerabilities and security misconfigurations in Android devices.",
     tags: ["Android", "ADB", "Mobile Security"],
     link: "https://github.com/pbscybsec/Rato_Daku",
-  },
-  {
-    name: "Face Recognition Attendance System",
-    description:
-      "An attendance management system using real-time facial recognition. Includes user registration, automated attendance marking, and an admin panel for viewing records.",
-    tags: ["Python", "OpenCV", "Facial Recognition"],
-  },
-  {
-    name: "Secure Password Manager",
-    description:
-      "A browser-based password manager with secure credential storage and a clean, easy-to-use interface.",
-    tags: ["JavaScript", "Encryption", "Browser Extension"],
   },
   {
     name: "File Encryption & Decryption Tool",
@@ -157,6 +147,13 @@ export const projects: Project[] = [
       "A CLI tool that scores password strength from Very Weak to Very Strong based on length, character variety, common-password lists, and predictable patterns, with actionable improvement suggestions.",
     tags: ["Python", "Security"],
     link: "https://github.com/Sachin0091/password-strength-checker",
+  },
+  {
+    name: "Password Generator",
+    description:
+      "A CLI tool that generates cryptographically secure random passwords using Python's secrets module, with configurable character sets and an unbiased Fisher-Yates shuffle.",
+    tags: ["Python", "Cryptography"],
+    link: "https://github.com/Sachin0091/password-generator",
   },
   {
     name: "Caesar Cipher Text Encryptor",
