@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sachin Gautam — Portfolio
 
-## Getting Started
+Personal portfolio site for Sachin Gautam (Cybersecurity Student & Associate SOC Analyst), built with Next.js 16 (App Router), TypeScript, and Tailwind CSS v4. Supports light/dark/system theme, is fully SEO-optimized (metadata, sitemap, robots, JSON-LD, OG image), and is ready to deploy on Vercel with the custom domain `sachin01.com.np`.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, Turbopack)
+- **Tailwind CSS v4**
+- **next-themes** for light/dark/system mode
+- **lucide-react** for icons
+- All resume content lives in one place: [`src/lib/data.ts`](src/lib/data.ts) — edit that file to update experience, projects, skills, certifications, etc.
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Editing content
 
-To learn more about Next.js, take a look at the following resources:
+Everything on the page (name, bio, experience, projects, skills, certifications, achievements, education, social links) comes from [`src/lib/data.ts`](src/lib/data.ts). Update that file and the whole site updates — no need to touch component files for content changes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To swap the résumé PDF that the "Download resume" button links to, replace [`public/Sachin_Gautam_Resume.pdf`](public/Sachin_Gautam_Resume.pdf) with the new file (keep the same filename, or update the `href` in [`src/components/hero.tsx`](src/components/hero.tsx)).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploying to Vercel
 
-## Deploy on Vercel
+1. Push this project to a GitHub repository.
+2. Go to [vercel.com/new](https://vercel.com/new), import the repository, and click **Deploy**. No environment variables are required.
+3. Once deployed, go to your Vercel project → **Settings → Domains** and add `sachin01.com.np` (and `www.sachin01.com.np` if you want the `www` subdomain too).
+4. Vercel will show you the DNS records to add at your domain registrar (wherever `sachin01.com.np` is registered):
+   - For the apex domain (`sachin01.com.np`): add an **A record** pointing to `76.76.21.21` (Vercel will confirm the exact value to use).
+   - For `www.sachin01.com.np`: add a **CNAME record** pointing to `cname.vercel-dns.com`.
+5. DNS propagation can take a few minutes to a few hours. Vercel automatically issues an SSL certificate once the domain verifies.
+6. Update `site.url` in [`src/lib/data.ts`](src/lib/data.ts) if it ever changes — it drives canonical URLs, Open Graph tags, and the sitemap.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## SEO checklist (already done)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Per-page `<title>`/`<meta description>` via the Metadata API
+- Open Graph + Twitter Card tags with a generated 1200×630 OG image (`/opengraph-image`)
+- `sitemap.xml` and `robots.txt` generated at build time
+- `manifest.webmanifest` for PWA installability
+- JSON-LD `Person` structured data for rich search results
+- Semantic HTML, descriptive alt/aria labels, and a fully responsive layout
