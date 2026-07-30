@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/container";
+import { GithubIcon } from "@/components/icons";
 import { SectionHeading } from "@/components/section-heading";
 import { projects } from "@/lib/data";
 
@@ -13,47 +14,54 @@ export function Projects() {
           description="Security tooling built to solve real problems I ran into during investigations and research."
         />
 
-        <div className="divide-y divide-border border-t border-border">
-          {projects.map((project, index) => (
-            <a
+        <div className="grid gap-5 sm:grid-cols-2">
+          {projects.map((project) => (
+            <div
               key={project.name}
-              href={project.link}
-              target={project.link ? "_blank" : undefined}
-              rel={project.link ? "noreferrer noopener" : undefined}
-              className={`group grid gap-2 px-4 py-6 -mx-4 sm:grid-cols-[2.5rem_1fr_auto] sm:items-start sm:gap-6 rounded-lg transition-colors ${
-                project.link ? "hover:bg-card" : "pointer-events-none"
-              }`}
+              className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
             >
-              <span className="font-mono text-sm text-muted">{String(index + 1).padStart(2, "0")}</span>
-
-              <div>
-                <h3 className="text-base font-semibold text-foreground transition-colors group-hover:text-accent">
-                  {project.name}
-                </h3>
-                <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                  {project.description}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-muted">
-                  {project.tags.map((tag, i) => (
-                    <span key={tag}>
-                      {tag}
-                      {i < project.tags.length - 1 ? <span className="ml-3 text-border">/</span> : null}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-1 flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors group-hover:text-accent sm:mt-0 sm:justify-end">
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-base font-semibold text-foreground">{project.name}</h3>
                 {project.link ? (
-                  <>
-                    View
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </>
-                ) : (
-                  <span className="text-xs">Coming soon</span>
-                )}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={`Open ${project.name} on GitHub`}
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors group-hover:border-accent group-hover:text-accent"
+                  >
+                    <GithubIcon className="h-4 w-4" />
+                  </a>
+                ) : null}
               </div>
-            </a>
+
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                {project.description}
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-accent-soft px-2.5 py-1 font-mono text-xs text-accent"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-accent"
+                >
+                  View repository
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
+              ) : null}
+            </div>
           ))}
         </div>
       </Container>

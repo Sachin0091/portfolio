@@ -1,33 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
-  --foreground: #18181b;
-  --card: #ffffff;
-  --card-foreground: #18181b;
-  --muted: #a1a1aa;
-  --muted-foreground: #71717a;
-  --border: #e4e4e7;
-  --accent: #4f46e5;
-  --accent-foreground: #ffffff;
-  --accent-soft: #eef2ff;
-  --primary: #18181b;
-  --ring: #4f46e5;
+  --background: #f7f2e7;
+  --foreground: #2b2318;
+  --card: #fffdf8;
+  --card-foreground: #2b2318;
+  --muted: #8a7c66;
+  --muted-foreground: #6b5f4d;
+  --border: #e6dac0;
+  --accent: #a8632f;
+  --accent-foreground: #fffdf8;
+  --accent-soft: #f0e1c6;
+  --primary: #2b2318;
+  --ring: #a8632f;
 }
 
 .dark {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --card: #131316;
-  --card-foreground: #fafafa;
-  --muted: #71717a;
-  --muted-foreground: #a1a1aa;
-  --border: #27272a;
-  --accent: #818cf8;
-  --accent-foreground: #09090b;
-  --accent-soft: #1a1a2e;
-  --primary: #fafafa;
-  --ring: #818cf8;
+  --background: #1c1712;
+  --foreground: #f3ead9;
+  --card: #241e17;
+  --card-foreground: #f3ead9;
+  --muted: #b3a58c;
+  --muted-foreground: #b3a58c;
+  --border: #3a2f22;
+  --accent: #e0a458;
+  --accent-foreground: #1c1712;
+  --accent-soft: #3a2c19;
+  --primary: #f3ead9;
+  --ring: #e0a458;
 }
 
 @theme inline {
@@ -43,8 +43,8 @@
   --color-accent-soft: var(--accent-soft);
   --color-primary: var(--primary);
   --color-ring: var(--ring);
-  --font-sans: var(--font-geist);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 * {
@@ -60,7 +60,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  font-feature-settings: "cv11", "ss01";
 }
 
 ::selection {
@@ -68,22 +67,16 @@ body {
   color: var(--accent);
 }
 
-:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-
-.dot-grid {
-  background-image: radial-gradient(var(--border) 1px, transparent 1px);
-  background-size: 24px 24px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
+.grid-fade {
+  background-image: radial-gradient(ellipse 60% 50% at 15% 10%, var(--accent-soft), transparent 60%),
+    radial-gradient(ellipse 50% 45% at 85% 0%, var(--accent-soft), transparent 55%);
+  opacity: 0.7;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -92,10 +85,25 @@ body {
 }
 
 .animate-fade-up {
-  animation: fade-up 0.5s ease-out both;
+  animation: fade-up 0.6s ease-out both;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .animate-float,
   .animate-fade-up {
     animation: none;
   }

@@ -8,13 +8,15 @@ export function SectionHeading({
   description?: string;
 }) {
   return (
-    <div className="mb-14 border-b border-border pb-8">
-      <span className="font-mono text-xs tracking-wide text-muted">{eyebrow}</span>
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+    <div className="mb-12 max-w-2xl">
+      <p className="mb-3 font-mono text-sm font-medium tracking-wide text-accent">
+        {eyebrow}
+      </p>
+      <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
+        <p className="mt-4 text-base leading-relaxed text-muted-foreground">
           {description}
         </p>
       ) : null}
