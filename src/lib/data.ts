@@ -81,7 +81,7 @@ export const projects: Project[] = [
   {
     name: "OSINT Digital Footprint Tracker",
     description:
-      "A local-first OSINT aggregator that builds a digital footprint from a username, email, phone number, or photo - enumerating 75 platforms, checking breach/registration signals, resolving phone carrier data, and pulling image EXIF metadata into one correlation graph with local scan history.",
+      "A local-first OSINT aggregator that builds a digital footprint from a username, email, phone number, or photo. It enumerates 75 platforms, checks breach and registration signals, resolves phone carrier data, and pulls image EXIF metadata into one correlation graph with local scan history.",
     tags: ["Python", "FastAPI", "OSINT", "Threat Intel"],
     link: "https://github.com/Sachin0091/osint-digital-footprint-tracker",
   },
@@ -123,21 +123,21 @@ export const projects: Project[] = [
   {
     name: "Network Port Scanner",
     description:
-      "A fast, multi-threaded TCP port scanner for auditing hosts on your own network - accepts a port range or explicit list and identifies likely services (SSH, HTTP, HTTPS, MySQL, RDP) with configurable timeout.",
+      "A fast, multi-threaded TCP port scanner for auditing hosts on your own network. Accepts a port range or explicit list and identifies likely services (SSH, HTTP, HTTPS, MySQL, RDP) with configurable timeout.",
     tags: ["Python", "Networking", "Multi-threading"],
     link: "https://github.com/Sachin0091/network-port-scanner",
   },
   {
     name: "URL Safety Checker",
     description:
-      "A CLI tool that analyzes a URL's structure for phishing/scam red flags - IP-hosted links, punycode lookalikes, shorteners, excessive subdomains, @ tricks - and produces a risk rating, with an optional live TLS/redirect check.",
+      "A CLI tool that analyzes a URL's structure for phishing and scam red flags (IP-hosted links, punycode lookalikes, shorteners, excessive subdomains, @ tricks) and produces a risk rating, with an optional live TLS and redirect check.",
     tags: ["Python", "Phishing Analysis"],
     link: "https://github.com/Sachin0091/url-safety-checker",
   },
   {
     name: "IP Address Information Finder",
     description:
-      "A CLI tool that looks up geolocation and network info - country, ISP, ASN, timezone, coordinates - for any IP address, or your own public IP if none is given.",
+      "A CLI tool that looks up geolocation and network info (country, ISP, ASN, timezone, coordinates) for any IP address, or your own public IP if none is given.",
     tags: ["Python", "OSINT", "Networking"],
     link: "https://github.com/Sachin0091/ip-address-info-finder",
   },
@@ -202,7 +202,7 @@ export type EducationItem = {
 
 export const education: EducationItem[] = [
   {
-    degree: "BScIT - Bachelor of Science in Information Technology",
+    degree: "BScIT (Bachelor of Science in Information Technology)",
     school: "Presidential Graduate School",
     location: "Baneshwor, Kathmandu",
     start: "Jul 2022",

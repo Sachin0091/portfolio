@@ -9,7 +9,7 @@ export function Experience() {
         <SectionHeading
           eyebrow="02 / Experience"
           title="Where I've worked."
-          description="Real SOC time - monitoring, tuning, and responding across live client environments."
+          description="Real SOC time monitoring, tuning, and responding across live client environments."
         />
 
         <ol className="relative space-y-10 border-l border-border pl-8">

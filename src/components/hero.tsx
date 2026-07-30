@@ -28,7 +28,7 @@ export function Hero() {
             </p>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               {site.tagline} Final-year BScIT student with hands-on SIEM
-              experience across live SOC environments - from alert triage
+              experience across live SOC environments, from alert triage
               and detection tuning to proactive threat hunting mapped to
               MITRE ATT&CK.
             </p>

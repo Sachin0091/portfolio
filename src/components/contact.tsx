@@ -16,7 +16,7 @@ export function Contact() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Clipboard API unavailable - the email is still visible to copy manually.
+      // Clipboard API unavailable; the email is still visible to copy manually.
     }
   };
 
@@ -33,7 +33,7 @@ export function Contact() {
           <button
             type="button"
             onClick={copyEmail}
-            className="group flex flex-col items-start rounded-2xl border border-border bg-card p-6 text-left transition-colors hover:border-accent/50"
+            className="group flex flex-col items-start rounded-2xl border border-border bg-card p-6 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
           >
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
               <Mail className="h-5 w-5" strokeWidth={2} />
@@ -57,7 +57,7 @@ export function Contact() {
             href={site.social.linkedin}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex flex-col items-start rounded-2xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
+            className="flex flex-col items-start rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
           >
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
               <LinkedinIcon className="h-5 w-5" />
@@ -70,7 +70,7 @@ export function Contact() {
             href={site.social.github}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex flex-col items-start rounded-2xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
+            className="flex flex-col items-start rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
           >
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
               <GithubIcon className="h-5 w-5" />
@@ -83,7 +83,7 @@ export function Contact() {
             href={site.social.tryhackme}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex flex-col items-start rounded-2xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
+            className="flex flex-col items-start rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
           >
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
               <Radar className="h-5 w-5" strokeWidth={2} />

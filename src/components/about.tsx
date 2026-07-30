@@ -36,7 +36,7 @@ export function About() {
           {pillars.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
-              className="rounded-2xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
+              className="rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
             >
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
                 <Icon className="h-5 w-5" strokeWidth={2} />

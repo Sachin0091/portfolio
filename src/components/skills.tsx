@@ -14,7 +14,10 @@ export function Skills() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((group) => (
-            <div key={group.category} className="rounded-2xl border border-border bg-card p-6">
+            <div
+              key={group.category}
+              className="rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/5"
+            >
               <h3 className="text-sm font-semibold text-foreground">{group.category}</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
