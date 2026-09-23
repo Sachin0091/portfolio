@@ -8,11 +8,11 @@ export function SectionHeading({
   description?: string;
 }) {
   return (
-    <div className="mb-12 max-w-2xl">
+    <div className="mb-10 max-w-3xl">
       <p className="mb-3 font-mono text-sm font-medium tracking-wide text-accent">
         {eyebrow}
       </p>
-      <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+      <h2 className="text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description ? (

@@ -1,14 +1,14 @@
 export const site = {
   name: "Sachin Gautam",
-  role: "Cybersecurity Student & Associate SOC Analyst",
+  role: "Cybersecurity Analyst | SOC Operations & Threat Hunting",
   tagline:
     "Defending networks through real-time detection, threat hunting, and incident response.",
   email: "sachingautam0b@gmail.com",
-  location: "Kalanki, Kathmandu, Nepal",
+  location: "Kathmandu, Nepal",
   domain: "sachin01.com.np",
   url: "https://sachin01.com.np",
   summary:
-    "Final-year BScIT student and Associate SOC Analyst with real-world experience in security monitoring, incident response, and threat detection. Hands-on with SIEM platforms in live SOC environments, with a track record of improving detection quality and supporting security operations across multiple client environments. Passionate about cybersecurity, continuous learning, and making security operations more effective.",
+    "Cybersecurity analyst and final-year BScIT student in Kathmandu. Experience in SIEM monitoring, incident investigation and threat hunting at Cryptogen Nepal. Builds practical security tools with Python.",
   social: {
     github: "https://github.com/sachin0091",
     linkedin: "https://www.linkedin.com/in/sachingautam01",
@@ -33,14 +33,14 @@ export const experience: Experience[] = [
     start: "Aug 2025",
     end: "Mar 2026",
     points: [
-      "Monitored and triaged security alerts across multiple client environments using SIEM platforms on a 24/7 basis.",
-      "Built and tuned detection rules, alerts, and dashboards to improve the quality and accuracy of security event detection.",
-      "Validated log ingestion and coverage from systems, applications, and endpoints to ensure complete visibility.",
-      "Investigated security incidents, collected evidence, and coordinated containment and remediation with relevant teams.",
-      "Conducted proactive threat hunting using the MITRE ATT&CK framework to identify threats before they caused impact.",
+      "Monitored and triaged security alerts for multiple clients in a 24/7 SOC.",
+      "Built and tuned SIEM detection rules and dashboards.",
+      "Checked log collection across systems, applications and endpoints.",
+      "Investigated incidents, gathered evidence and coordinated containment with other teams.",
+      "Hunted for suspicious activity using MITRE ATT&CK.",
       "Documented investigation findings and contributed to improving SOC playbooks and workflows.",
-      "Delivered knowledge transfer sessions to new analysts to standardise team processes and improve overall capacity.",
-      "Prepared clear security reports for stakeholders, translating technical findings into practical recommendations.",
+      "Trained new analysts on team processes.",
+      "Wrote security reports with clear findings and recommendations.",
     ],
   },
   {
@@ -52,7 +52,7 @@ export const experience: Experience[] = [
     points: [
       "Supported real-time SIEM monitoring and alert analysis across multiple client environments.",
       "Investigated phishing campaigns, suspicious domains, and IP addresses using threat intelligence tools.",
-      "Performed log correlation and incident triage to identify and help neutralise potential threats.",
+      "Connected related log events and helped assess security incidents.",
       "Contributed to threat hunting and digital forensic investigations as part of the SOC team.",
     ],
   },
@@ -81,21 +81,21 @@ export const projects: Project[] = [
   {
     name: "OSINT Digital Footprint Tracker",
     description:
-      "A local-first OSINT aggregator that builds a digital footprint from a username, email, phone number, or photo. It enumerates 75 platforms, checks breach and registration signals, resolves phone carrier data, and pulls image EXIF metadata into one correlation graph with local scan history.",
+      "Checks usernames across 75 platforms and brings together breach signals, phone details and photo metadata. Built to make digital footprint investigations easier to review.",
     tags: ["Python", "FastAPI", "OSINT", "Threat Intel"],
     link: "https://github.com/Sachin0091/osint-digital-footprint-tracker",
   },
   {
     name: "Phishing Website Detector",
     description:
-      "A CLI tool that fetches a webpage and scans its content and structure for phishing indicators: brand impersonation, credential-harvesting forms that submit off-domain, hidden iframes, obfuscated JavaScript, and IP-hosted sites.",
+      "Scans webpages for fake login forms, brand impersonation and other signs of phishing. Flags suspicious page elements for further investigation.",
     tags: ["Python", "Web Scraping", "Phishing Analysis"],
     link: "https://github.com/Sachin0091/phishing-website-detector",
   },
   {
     name: "Malicious IP Analyzer",
     description:
-      "A web application that checks multiple IP addresses for malicious activity using the AbuseIPDB API, with WHOIS lookup for additional context. Built to speed up the IP investigation process during alert triage.",
+      "Checks IP reputation with AbuseIPDB and adds WHOIS information. Puts the details needed for alert triage in one place.",
     tags: ["Python", "AbuseIPDB API", "WHOIS", "Threat Intel"],
     link: "https://github.com/Sachin0091/MaliciousIPAnalyser",
   },
@@ -109,56 +109,56 @@ export const projects: Project[] = [
   {
     name: "File Encryption & Decryption Tool",
     description:
-      "A CLI tool that encrypts and decrypts files using Fernet (AES-128-CBC with HMAC authentication), deriving the key from a passphrase via PBKDF2-HMAC-SHA256 with a random per-file salt.",
+      "Encrypts and decrypts files using a passphrase. Uses Fernet encryption and PBKDF2 key derivation with a separate random salt for each file.",
     tags: ["Python", "Cryptography", "PBKDF2"],
     link: "https://github.com/Sachin0091/file-encryption-decryption-tool",
   },
   {
     name: "Login Authentication System",
     description:
-      "A CLI demo of a secure username/password auth flow: PBKDF2-HMAC-SHA256 password hashing with per-user salt, account lockout after repeated failed attempts, and generic error messages that don't leak whether a username exists.",
+      "A login demo with salted password hashing and account lockout after repeated failed attempts. Uses generic errors to avoid exposing account details.",
     tags: ["Python", "PBKDF2", "Auth"],
     link: "https://github.com/Sachin0091/login-authentication-system",
   },
   {
     name: "Network Port Scanner",
     description:
-      "A fast, multi-threaded TCP port scanner for auditing hosts on your own network. Accepts a port range or explicit list and identifies likely services (SSH, HTTP, HTTPS, MySQL, RDP) with configurable timeout.",
+      "Checks multiple TCP ports at once and identifies common services such as SSH, HTTP and RDP. Supports custom port ranges and timeouts.",
     tags: ["Python", "Networking", "Multi-threading"],
     link: "https://github.com/Sachin0091/network-port-scanner",
   },
   {
     name: "URL Safety Checker",
     description:
-      "A CLI tool that analyzes a URL's structure for phishing and scam red flags (IP-hosted links, punycode lookalikes, shorteners, excessive subdomains, @ tricks) and produces a risk rating, with an optional live TLS and redirect check.",
+      "Checks links for suspicious domains, misleading characters and other phishing indicators. Includes optional TLS and redirect checks.",
     tags: ["Python", "Phishing Analysis"],
     link: "https://github.com/Sachin0091/url-safety-checker",
   },
   {
     name: "IP Address Information Finder",
     description:
-      "A CLI tool that looks up geolocation and network info (country, ISP, ASN, timezone, coordinates) for any IP address, or your own public IP if none is given.",
+      "Looks up the location, internet provider and network details of an IP address.",
     tags: ["Python", "OSINT", "Networking"],
     link: "https://github.com/Sachin0091/ip-address-info-finder",
   },
   {
     name: "Password Strength Checker",
     description:
-      "A CLI tool that scores password strength from Very Weak to Very Strong based on length, character variety, common-password lists, and predictable patterns, with actionable improvement suggestions.",
+      "Checks password length, common patterns and character variety. Explains weaknesses and suggests improvements.",
     tags: ["Python", "Security"],
     link: "https://github.com/Sachin0091/password-strength-checker",
   },
   {
     name: "Password Generator",
     description:
-      "A CLI tool that generates cryptographically secure random passwords using Python's secrets module, with configurable character sets and an unbiased Fisher-Yates shuffle.",
+      "Generates random passwords using Python's secrets module with configurable character sets.",
     tags: ["Python", "Cryptography"],
     link: "https://github.com/Sachin0091/password-generator",
   },
   {
     name: "Caesar Cipher Text Encryptor",
     description:
-      "A CLI implementation of the classic Caesar shift cipher with a brute-force crack mode that tries all 26 shifts and ranks candidates by letter-frequency scoring.",
+      "A learning project that encrypts text with a Caesar cipher and tries all 26 shifts to decode it.",
     tags: ["Python", "Cryptography"],
     link: "https://github.com/Sachin0091/caesar-cipher-text-encryptor",
   },

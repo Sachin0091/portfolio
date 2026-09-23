@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/reveal";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
@@ -13,15 +14,15 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Certifications />
-        <Achievements />
-        <Contact />
+        <Reveal><About /></Reveal>
+        <Reveal><Experience /></Reveal>
+        <Reveal><Projects /></Reveal>
+        <Reveal><Skills /></Reveal>
+        <Reveal><Certifications /></Reveal>
+        <Reveal><Achievements /></Reveal>
+        <Reveal><Contact /></Reveal>
       </main>
       <Footer />
     </>

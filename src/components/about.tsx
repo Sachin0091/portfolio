@@ -1,52 +1,15 @@
-import { Eye, Radar, ShieldAlert, Siren } from "lucide-react";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
-import { site } from "@/lib/data";
-
-const pillars = [
-  {
-    icon: Eye,
-    title: "Detection & Monitoring",
-    description: "24/7 alert triage across multiple client environments using LogPoint, FortiSIEM, and LogRhythm.",
-  },
-  {
-    icon: Radar,
-    title: "Threat Hunting",
-    description: "Proactive hunts mapped to the MITRE ATT&CK framework to catch threats before impact.",
-  },
-  {
-    icon: Siren,
-    title: "Incident Response",
-    description: "Investigation, evidence collection, and coordinated containment with cross-functional teams.",
-  },
-  {
-    icon: ShieldAlert,
-    title: "Detection Engineering",
-    description: "Tuning rules, alerts, and dashboards to raise detection accuracy and reduce noise.",
-  },
+const strengths = [
+  ["01", "Security monitoring", "Reviewing alerts and connecting events across LogPoint, FortiSIEM and LogRhythm."],
+  ["02", "Incident investigation", "Gathering evidence and working with teams to contain security threats."],
+  ["03", "Threat hunting", "Using MITRE ATT&CK to investigate suspicious activity and improve detection rules."],
+  ["04", "Practical reporting", "Turning technical findings into clear recommendations that teams can act on."],
 ];
-
 export function About() {
-  return (
-    <section id="about" className="py-24">
-      <Container>
-        <SectionHeading eyebrow="01 / About" title="Security-first." description={site.summary} />
-
-        <div className="grid gap-5 sm:grid-cols-2">
-          {pillars.map(({ icon: Icon, title, description }) => (
-            <div
-              key={title}
-              className="rounded-2xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
-                <Icon className="h-5 w-5" strokeWidth={2} />
-              </div>
-              <h3 className="text-base font-semibold text-foreground">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
+  return <section id="about" className="section-space border-t border-border"><Container>
+    <div className="section-intro-grid"><SectionHeading eyebrow="01 / About" title="A practical approach to security." />
+    <p className="text-lg leading-relaxed text-muted-foreground">My experience comes from working in a 24/7 SOC, investigating alerts across client environments and building my own security tools. I care about understanding what happened and explaining what to do next.</p></div>
+    <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">{strengths.map(([n,title,description]) => <div key={n} className="border-t border-border pt-6"><span className="font-mono text-sm text-accent">{n}</span><h3 className="mt-4 text-lg font-semibold">{title}</h3><p className="mt-3 text-base leading-relaxed text-muted-foreground">{description}</p></div>)}</div>
+  </Container></section>;
 }

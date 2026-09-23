@@ -1,70 +1,20 @@
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/container";
-import { GithubIcon } from "@/components/icons";
 import { SectionHeading } from "@/components/section-heading";
 import { projects } from "@/lib/data";
-
 export function Projects() {
-  return (
-    <section id="projects" className="border-t border-border py-24">
-      <Container>
-        <SectionHeading
-          eyebrow="03 / Projects"
-          title="Things I've built."
-          description="Security tooling built to solve real problems I ran into during investigations and research."
-        />
-
-        <div className="grid gap-5 sm:grid-cols-2">
-          {projects.map((project) => (
-            <div
-              key={project.name}
-              className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-foreground">{project.name}</h3>
-                {project.link ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    aria-label={`Open ${project.name} on GitHub`}
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors group-hover:border-accent group-hover:text-accent"
-                  >
-                    <GithubIcon className="h-4 w-4" />
-                  </a>
-                ) : null}
-              </div>
-
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {project.description}
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-accent-soft px-2.5 py-1 font-mono text-xs text-accent"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {project.link ? (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-accent"
-                >
-                  View repository
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
-              ) : null}
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
+ return <section id="projects" className="section-space border-t border-border"><Container>
+  <SectionHeading eyebrow="03 / Projects" title="Tools built for investigation." description="A collection of security projects, from IP checks and phishing analysis to encryption and network scanning." />
+  <div className="grid gap-5 xl:grid-cols-3 sm:grid-cols-2">{projects.slice(0,3).map((project,i)=><article key={project.name} className="featured-project">
+   <div className="flex items-center justify-between"><span className="font-mono text-xs text-accent">0{i+1} / SECURITY TOOL</span><ArrowUpRight className="text-muted-foreground" size={20} aria-hidden="true" /></div>
+   <h3 className="mt-8 text-2xl font-semibold leading-snug tracking-tight">{project.name}</h3><p className="mt-4 flex-1 text-base leading-relaxed text-muted-foreground">{project.description}</p>
+   <div className="mt-6 flex flex-wrap gap-2">{project.tags.map(tag=><span key={tag} className="project-tag">{tag}</span>)}</div>
+   <a className="mt-8 inline-flex items-center gap-2 self-start text-sm font-semibold text-accent hover:underline" href={project.link} target="_blank" rel="noreferrer noopener" aria-label={`View ${project.name} on GitHub`}>View on GitHub <ArrowUpRight size={16} aria-hidden="true" /></a>
+  </article>)}</div>
+  <h3 className="mt-14 mb-6 text-xl font-semibold">More projects</h3>
+  <div className="grid gap-x-12 sm:grid-cols-2">{projects.slice(3).map(project=><article key={project.name} className="border-t border-border py-7">
+   <h4 className="text-lg font-semibold"><a className="inline-flex items-start gap-3 hover:text-accent" href={project.link} target="_blank" rel="noreferrer noopener">{project.name}<ArrowUpRight size={17} className="mt-1 shrink-0 text-accent" aria-hidden="true" /></a></h4>
+   <p className="mt-3 text-base leading-relaxed text-muted-foreground">{project.description}</p><p className="mt-4 text-sm text-muted-foreground">{project.tags.join(" · ")}</p>
+  </article>)}</div>
+ </Container></section>;
 }
