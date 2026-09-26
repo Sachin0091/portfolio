@@ -85,10 +85,10 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7f9fc" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b1220" },
+    { media: "(prefers-color-scheme: light)", color: "#111111" },
+    { media: "(prefers-color-scheme: dark)", color: "#111111" },
   ],
-  colorScheme: "light dark",
+  colorScheme: "dark",
 };
 
 const jsonLd = {
@@ -120,14 +120,22 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <head>
+        {process.env.NODE_ENV === "development" && (
+          <script
+            src="https://mcp.figma.com/mcp/html-to-design/capture.js"
+            async
+          />
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <a href="#main-content" className="skip-link">Skip to content</a>
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
+          <a href="#main-content" className="skip-link">
+            Skip to content
+          </a>
           {children}
         </ThemeProvider>
       </body>
